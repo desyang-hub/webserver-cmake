@@ -1,0 +1,1 @@
+sudo apt install libmysqlclient-dev # 安装mysqlclient-c++头文件

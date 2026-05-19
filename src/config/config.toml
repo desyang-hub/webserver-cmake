@@ -1,0 +1,20 @@
+[server]
+ip = "0.0.0.0"
+port = 8080
+mode = 1
+timeout_ms = 5000
+is_safe_quit = false
+
+[database]
+mysql_host = "127.0.0.1"
+mysql_port = 3306
+mysql_username = "root"
+mysql_password = "root"
+mysql_database_name = "webserver_db"
+
+[params]
+conn_pool_size = 10
+thread_pool_size = 8
+is_logging_open = true
+log_level = 2
+async_logging_queue_size = 1024
