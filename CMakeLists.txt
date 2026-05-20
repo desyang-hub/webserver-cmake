@@ -30,10 +30,24 @@ target_include_directories(config PUBLIC
     ${CMAKE_CURRENT_SOURCE_DIR}/include
 )
 
-
 # 将 config.toml 从源码目录复制到构建目录（保持同名）
 configure_file(
     ${CMAKE_CURRENT_SOURCE_DIR}/src/config/config.toml   # 源文件
     ${CMAKE_CURRENT_BINARY_DIR}/config.toml   # 目标文件
     COPYONLY                         # 关键！表示仅复制，不处理变量替换
+)
+
+add_executable(httpserver_test 
+    src/httpserver_test.cc
+)
+
+target_link_libraries(httpserver_test
+    PUBLIC
+    muduo_net
+    muduo_base
+    muduo_http
+)
+
+add_executable(bufer_test
+    src/bufer_test.cc
 )

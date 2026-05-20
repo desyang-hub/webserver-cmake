@@ -42,6 +42,9 @@ private:
         void operator()(MYSQL* ptr) {
             if (ptr && pool_) {
                 pool_->freeConn(ptr);
+            } else {
+                if (ptr)
+                    mysql_close(ptr);
             }
         }
     };
